@@ -591,6 +591,7 @@ Example `marketplace.json` structure:
 | Tool | Description |
 |:-----|:------------|
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
+| [claude-dash](https://github.com/krabat-l/claude-dash) | Real-time statusline for Claude Code showing context, cost, quota, cache, tools, and git status. Zero dependencies. |
 
 ## Documentation and References
 
