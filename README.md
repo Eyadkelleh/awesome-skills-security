@@ -616,3 +616,5 @@ This repository is provided for educational and authorized security testing purp
 **Note:** This is a curated reference repository. Always verify you have proper authorization before conducting security testing. When in doubt, ask for explicit written permission.
 
 **Generated with Claude Code** | Awesome Claude Skills: Security Collection
+
+- [Septim Agents Pack](https://septimlabs.com/agents?utm_source=awesome-list&utm_campaign=eyadkelleh) - 15 named Claude Code sub-agents including **Ward** (legal/compliance) and **Aegis** (security review). Drops into `~/.claude/agents/`. Open-source sample at [github.com/septimlabs-code/septim-agents-pack-sample](https://github.com/septimlabs-code/septim-agents-pack-sample). $49 lifetime.
