@@ -590,6 +590,7 @@ Example `marketplace.json` structure:
 
 | Tool | Description |
 |:-----|:------------|
+| [APort Agent Guardrails](https://aport.io) | Pre-action authorization guardrails for AI agents and MCP/tool-use workflows. |
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
 
 ## Documentation and References
