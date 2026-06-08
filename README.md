@@ -4,9 +4,11 @@
 
 A curated collection of security testing resources packaged as agent skills, available on [skills.sh](https://skills.sh/)
 
+**Repository:** [Eyadkelleh/awesome-skills-security](https://github.com/Eyadkelleh/awesome-skills-security) · **skills.sh:** [Eyadkelleh/awesome-skills-security](https://skills.sh/Eyadkelleh/awesome-skills-security)
+
 ## Overview
 
-This repository contains a curated collection of security testing resources from [SecLists](https://github.com/danielmiessler/SecLists) packaged as Claude Code skills. These skills provide instant access to essential wordlists, payloads, patterns, and web shells for authorized security testing, penetration testing, CTF competitions, and security research.
+This repository contains a curated collection of security testing resources from [SecLists](https://github.com/danielmiessler/SecLists) packaged as [Agent Skills](https://agentskills.io) for use with Claude Code, Cursor, Codex, and [60+ other supported agents](https://skills.sh/). These skills provide instant access to essential wordlists, payloads, patterns, and web shells for authorized security testing, penetration testing, CTF competitions, and security research.
 
 The goal of this project is to provide organized, immediately accessible security testing resources that integrate seamlessly with Claude Code workflows for:
 
@@ -21,18 +23,27 @@ The goal of this project is to provide organized, immediately accessible securit
 
 ### Install from skills.sh (Recommended)
 
-The easiest way to get started is to install from the [skills.sh](https://skills.sh/) directory:
+The easiest way to get started is to install from the [skills.sh](https://skills.sh/) directory using the open agent skills CLI:
 
 ```bash
 # List all available skills in this repository
 npx skills add Eyadkelleh/awesome-skills-security --list
 
-# Install all security skills
+# Install all 7 security skills
 npx skills add Eyadkelleh/awesome-skills-security --skill '*' -y
 
-# Or install specific skills
+# Install specific skills
 npx skills add Eyadkelleh/awesome-skills-security --skill security-fuzzing --skill llm-testing -y
+
+# Install to a specific agent (e.g. Cursor or Claude Code)
+npx skills add Eyadkelleh/awesome-skills-security -a cursor -y
+npx skills add Eyadkelleh/awesome-skills-security -a claude-code -y
+
+# Install globally (available across all projects)
+npx skills add Eyadkelleh/awesome-skills-security --skill '*' -g -y
 ```
+
+Browse and discover this collection on skills.sh: [skills.sh/Eyadkelleh/awesome-skills-security](https://skills.sh/Eyadkelleh/awesome-skills-security)
 
 For Claude Code plugin marketplace users:
 
@@ -103,28 +114,46 @@ If this is your first time using Claude Code skills:
 
 ### Troubleshooting
 
-**"Marketplace not found"**
+**"No skills found" (skills.sh CLI)**
+- Ensure you're using the correct repo: `Eyadkelleh/awesome-skills-security`
+- Run `npx skills add Eyadkelleh/awesome-skills-security --list` to verify discovery
+- Each `SKILL.md` must have valid YAML frontmatter with `name` (lowercase, hyphens) and `description`
+
+**"Marketplace not found" (Claude Code)**
 - Ensure the GitHub repository is public
 - Check your internet connection
 - Verify the repository name is correct: `Eyadkelleh/awesome-skills-security`
 
-**"Plugin not available"**
+**"Plugin not available" (Claude Code)**
 - Make sure you've added the marketplace first
 - Run `/plugin` to see all available plugins
 - Check that you're using the correct plugin name and marketplace
 
-**"Command not working"**
+**"Command not working" (Claude Code)**
 - Verify the plugin is installed with `/plugin`
 - Try reinstalling: `/plugin uninstall <plugin-name>` then install again
 - Make sure you're using the correct slash command syntax
 
 **Need help?**
 - Open an issue on [GitHub](https://github.com/Eyadkelleh/awesome-skills-security/issues)
+- Check the [skills.sh directory](https://skills.sh/) and [Agent Skills spec](https://agentskills.io)
 - Check the [Claude Code documentation](https://docs.anthropic.com/claude-code)
 
 ## Available Skills
 
-### Fuzzing
+All skills live under `skills/` and are discoverable by the [skills.sh CLI](https://skills.sh/). Each skill has a `SKILL.md` with `name` and `description` frontmatter.
+
+| Skill ID | Description | Install command |
+|:---------|:------------|:----------------|
+| `security-fuzzing` | SQL, NoSQL, command injection, and LDAP fuzzing payloads | `npx skills add Eyadkelleh/awesome-skills-security --skill security-fuzzing -y` |
+| `security-passwords` | Curated password wordlists for authorized credential testing | `npx skills add Eyadkelleh/awesome-skills-security --skill security-passwords -y` |
+| `security-patterns` | API keys, credit cards, emails, and sensitive data patterns | `npx skills add Eyadkelleh/awesome-skills-security --skill security-patterns -y` |
+| `security-payloads` | XSS, XXE, template injection, and file upload payloads | `npx skills add Eyadkelleh/awesome-skills-security --skill security-payloads -y` |
+| `security-usernames` | Common username wordlists for enumeration | `npx skills add Eyadkelleh/awesome-skills-security --skill security-usernames -y` |
+| `security-webshells` | Web shell samples for detection and defensive testing | `npx skills add Eyadkelleh/awesome-skills-security --skill security-webshells -y` |
+| `llm-testing` | LLM bias, data leakage, alignment, and adversarial testing prompts | `npx skills add Eyadkelleh/awesome-skills-security --skill llm-testing -y` |
+
+### Fuzzing (`security-fuzzing`)
 **Essential fuzzing payloads for vulnerability testing**
 - SQL injection testing payloads
 - Command injection patterns
@@ -133,7 +162,7 @@ If this is your first time using Claude Code skills:
 - Special character fuzzing
 - Authentication bypass patterns
 
-### Passwords
+### Passwords (`security-passwords`)
 **Curated password lists for authorized credential testing**
 - 500 worst passwords
 - 10K most common passwords
@@ -141,7 +170,7 @@ If this is your first time using Claude Code skills:
 - Dark web breach compilations
 - Probable password variations
 
-### Pattern-Matching
+### Pattern-Matching (`security-patterns`)
 **Sensitive data patterns for security testing**
 - API key detection patterns
 - Credit card format validation
@@ -150,7 +179,7 @@ If this is your first time using Claude Code skills:
 - SSN format matching
 - Phone number patterns
 
-### Payloads
+### Payloads (`security-payloads`)
 **Specialized attack payloads for testing**
 - XSS injection vectors
 - XXE payloads
@@ -158,14 +187,14 @@ If this is your first time using Claude Code skills:
 - File upload bypasses
 - Path traversal strings
 
-### Usernames
+### Usernames (`security-usernames`)
 **Common username wordlists**
 - Default usernames
 - Common account names
 - Service-specific usernames
 - Admin account patterns
 
-### Web-Shells
+### Web-Shells (`security-webshells`)
 **Web shell samples for detection and analysis**
 - PHP web shells
 - ASP/ASPX shells
@@ -173,7 +202,7 @@ If this is your first time using Claude Code skills:
 - Python shells
 - Perl shells
 
-### LLM Testing
+### LLM Testing (`llm-testing`)
 **Comprehensive AI/ML security testing prompts**
 - Bias detection (gender, nationality, race/ethnicity)
 - Data leakage and privacy testing
@@ -184,14 +213,35 @@ If this is your first time using Claude Code skills:
 
 ## Requirements
 
-- **Claude Code CLI** (latest version)
+- **Node.js** (for `npx skills` — the skills.sh install CLI)
+- **Claude Code CLI** (optional, for plugin marketplace and slash commands)
 - Git for cloning the repository
 - Basic understanding of security testing concepts
 - Authorization for security testing on target systems
 
 ## Installation
 
-### Method 1: Add Marketplace (Recommended)
+### Method 1: skills.sh CLI (Recommended)
+
+Install skills into your agent using the [skills.sh](https://skills.sh/) ecosystem:
+
+```bash
+# See what's available
+npx skills add Eyadkelleh/awesome-skills-security --list
+
+# Install everything
+npx skills add Eyadkelleh/awesome-skills-security --skill '*' -y
+
+# Install to Cursor only
+npx skills add Eyadkelleh/awesome-skills-security -a cursor --skill '*' -y
+
+# Update installed skills later
+npx skills update -y
+```
+
+Skills are installed to your agent's skills directory (e.g. `.cursor/skills/` for Cursor, `.claude/skills/` for Claude Code). Use `-g` for a global install available across all projects.
+
+### Method 2: Claude Code Plugin Marketplace
 
 Add this repository as a Claude Code plugin marketplace:
 
@@ -205,7 +255,7 @@ Then list available plugins:
 /plugin
 ```
 
-### Method 2: Install Specific Plugins
+### Method 3: Install Specific Plugins
 
 Install individual security testing plugins:
 
@@ -232,7 +282,7 @@ Install individual security testing plugins:
 /plugin install llm-testing@awesome-security-skills
 ```
 
-### Method 3: Clone Repository
+### Method 4: Clone Repository
 
 Clone and use directly:
 
@@ -546,26 +596,75 @@ Please open an issue or pull request.
 
 ## How to Use This on skills.sh
 
-This skill collection is compatible with the [skills.sh](https://skills.sh/) open agent skills directory. Skills are discovered from the `skills/` directory and indexed when users install them via the CLI.
+This repository is published on the [skills.sh](https://skills.sh/) open agent skills directory — the public registry for the [Agent Skills](https://agentskills.io) ecosystem. Skills are discovered from the `skills/` directory and appear on the [skills.sh leaderboard](https://skills.sh/) as users install them.
+
+**Collection page:** [skills.sh/Eyadkelleh/awesome-skills-security](https://skills.sh/Eyadkelleh/awesome-skills-security)
+
+### What is skills.sh?
+
+[skills.sh](https://skills.sh/) is the directory and CLI for reusable agent skills. A single install command works across Claude Code, Cursor, Codex, OpenCode, and dozens of other agents. No separate packaging or publish step is required — push valid `SKILL.md` files to a public GitHub repo and users can install immediately.
 
 ### For Users
 
-1. **Browse skills.sh**: Visit [skills.sh](https://skills.sh/) and search for security skills
-2. **Install via CLI**: `npx skills add Eyadkelleh/awesome-skills-security`
-3. **List available skills**: `npx skills add Eyadkelleh/awesome-skills-security --list`
-4. **Start using**: Access wordlists and testing resources in your agent
+```bash
+# Browse what's available
+npx skills add Eyadkelleh/awesome-skills-security --list
 
-For Claude Code plugin users, add the marketplace with `/plugin marketplace add Eyadkelleh/awesome-skills-security`.
+# Install all skills (project scope)
+npx skills add Eyadkelleh/awesome-skills-security --skill '*' -y
+
+# Install one skill to Cursor
+npx skills add Eyadkelleh/awesome-skills-security --skill security-fuzzing -a cursor -y
+
+# Search the skills.sh directory
+npx skills find security
+```
+
+After installing, ask your agent to use a skill naturally:
+
+```
+"Use the security-fuzzing skill to show me SQL injection payloads"
+```
+
+Claude Code users can also add the plugin marketplace: `/plugin marketplace add Eyadkelleh/awesome-skills-security`
+
+### Supported Agents
+
+Install to any supported agent with the `-a` flag:
+
+| Agent | Install example |
+|:------|:----------------|
+| Cursor | `npx skills add Eyadkelleh/awesome-skills-security -a cursor -y` |
+| Claude Code | `npx skills add Eyadkelleh/awesome-skills-security -a claude-code -y` |
+| Codex | `npx skills add Eyadkelleh/awesome-skills-security -a codex -y` |
+| OpenCode | `npx skills add Eyadkelleh/awesome-skills-security -a opencode -y` |
+
+See the full list of [supported agents](https://skills.sh/).
+
+### SKILL.md Requirements
+
+Each skill directory must contain a `SKILL.md` with YAML frontmatter:
+
+```yaml
+---
+name: security-fuzzing
+description: "Essential fuzzing payloads: SQL injection, command injection, and more."
+---
+```
+
+- `name` — lowercase identifier with hyphens only (e.g. `security-fuzzing`)
+- `description` — non-empty; quote values that contain colons
 
 ### For Contributors
 
-Want to add your own skills to this collection? Here's how:
+Want to add your own skills to this collection?
 
 1. **Fork this repository**
 2. **Add your skill** under `skills/your-skill-name/`
 3. **Create a SKILL.md** with valid frontmatter (`name` must be lowercase with hyphens, plus `description`)
-4. **Update marketplace.json** to include your skill
-5. **Submit a pull request** with a description of your contribution
+4. **Update `marketplace.json`** to include your skill
+5. **Verify locally**: `npx skills add . --list`
+6. **Submit a pull request** with a description of your contribution
 
 ### Publishing Your Own Skills
 
@@ -611,8 +710,12 @@ Example `marketplace.json` structure:
 
 ## Documentation and References
 
-- [skills.sh Marketplace](https://skills.sh/) - Browse and discover Claude Code skills
+- [skills.sh Directory](https://skills.sh/) - Browse and install agent skills
+- [This collection on skills.sh](https://skills.sh/Eyadkelleh/awesome-skills-security) - Install stats and skill listing
+- [Agent Skills Specification](https://agentskills.io) - SKILL.md format and conventions
+- [skills CLI (npm)](https://www.npmjs.com/package/skills) - `npx skills` install and manage skills
 - [Claude Code Documentation](https://docs.anthropic.com/claude-code) - Official Claude Code docs
+- [Cursor Skills Documentation](https://cursor.com/docs/context/skills) - Using skills in Cursor
 - [SecLists Official Repository](https://github.com/danielmiessler/SecLists)
 - [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
 - [Bug Bounty Platforms](https://github.com/disclose/bug-bounty-platforms)
