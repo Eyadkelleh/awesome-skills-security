@@ -1,4 +1,4 @@
-# Awesome Claude Skills: Security Collection
+# Awesome Security Skills: Security Collection
 
 A curated collection of security testing resources packaged as Claude Code skills, available on [skills.sh](https://skills.sh/)
 
