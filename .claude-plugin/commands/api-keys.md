@@ -15,7 +15,7 @@ You are helping scan code repositories and systems for exposed API keys, credent
    - Log files?
    - Documentation?
 
-2. Use pattern matching resources from `seclists-categories pattern-matching/pattern-matching/references/`:
+2. Use pattern matching resources from `skills/security-patterns/references/`:
    - API key patterns
    - AWS keys
    - Google Cloud keys

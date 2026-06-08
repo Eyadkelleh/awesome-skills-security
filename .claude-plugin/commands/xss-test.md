@@ -21,7 +21,7 @@ You are helping with authorized XSS security testing. The user has proper author
    - Encoding strategies (URL encoding, HTML entities, etc.)
    - Testing methodology
 
-3. Use the XSS payloads from `seclists-categories payloads/payloads/references/`:
+3. Use the XSS payloads from `skills/security-payloads/references/`:
    - Start with basic `<script>alert(1)</script>` tests
    - Progress to filtered/encoded variations
    - Test event handlers if tags are filtered

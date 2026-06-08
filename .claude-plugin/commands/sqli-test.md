@@ -21,7 +21,7 @@ You are helping with authorized SQL injection security testing. The user has pro
    - Payload encoding suggestions if needed
    - Detection and bypass techniques
 
-3. Use the fuzzing wordlists from `seclists-categories fuzzing/fuzzing/references/Fuzzing/`:
+3. Use the fuzzing wordlists from `skills/security-fuzzing/references/Fuzzing/`:
    - `quick-SQLi.txt` - Quick initial tests
    - `Generic-SQLi.txt` - Generic payloads
    - `MySQL.fuzzdb.txt` - MySQL-specific

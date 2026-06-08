@@ -7,12 +7,12 @@
   "metadata": {
     "description": "Security testing tools and resources from SecLists for authorized pentesting, CTF competitions, and security research",
     "version": "1.0.0",
-    "pluginRoot": "./plugins"
+    "pluginRoot": "./skills"
   },
   "plugins": [
     {
       "name": "security-fuzzing",
-      "source": "./seclists-categories fuzzing/fuzzing",
+      "source": "./skills/security-fuzzing",
       "description": "Essential fuzzing payloads for SQL injection, command injection, and vulnerability testing",
       "version": "1.0.0",
       "author": {
@@ -26,7 +26,7 @@
     },
     {
       "name": "security-passwords",
-      "source": "./seclists-categories passwords/passwords",
+      "source": "./skills/security-passwords",
       "description": "Curated password wordlists for authorized credential testing and password policy validation",
       "version": "1.0.0",
       "author": {
@@ -40,7 +40,7 @@
     },
     {
       "name": "security-patterns",
-      "source": "./seclists-categories pattern-matching/pattern-matching",
+      "source": "./skills/security-patterns",
       "description": "Sensitive data patterns for API keys, credit cards, emails, and security testing",
       "version": "1.0.0",
       "author": {
@@ -54,7 +54,7 @@
     },
     {
       "name": "security-payloads",
-      "source": "./seclists-categories payloads/payloads",
+      "source": "./skills/security-payloads",
       "description": "Specialized attack payloads for XSS, XXE, template injection, and file upload testing",
       "version": "1.0.0",
       "author": {
@@ -68,7 +68,7 @@
     },
     {
       "name": "security-usernames",
-      "source": "./seclists-categories usernames/usernames",
+      "source": "./skills/security-usernames",
       "description": "Common username wordlists for enumeration and authorized security testing",
       "version": "1.0.0",
       "author": {
@@ -82,7 +82,7 @@
     },
     {
       "name": "security-webshells",
-      "source": "./seclists-categories web-shells/web-shells",
+      "source": "./skills/security-webshells",
       "description": "Web shell samples for detection system validation and defensive security",
       "version": "1.0.0",
       "author": {
@@ -96,13 +96,13 @@
     },
     {
       "name": "llm-testing",
-      "source": "./LLM_Testing",
+      "source": "./skills/llm-testing",
       "description": "Comprehensive LLM security testing prompts for bias detection, data leakage, alignment testing, and adversarial prompt resistance",
       "version": "1.0.0",
       "author": {
         "name": "Eyad Kelleh"
       },
-      "homepage": "https://github.com/Eyadkelleh/awesome-claude-skills-security",
+      "homepage": "https://github.com/Eyadkelleh/awesome-skills-security",
       "license": "MIT",
       "keywords": ["llm", "ai-safety", "bias-testing", "data-leakage", "alignment", "red-team", "adversarial"],
       "category": "ai-security",

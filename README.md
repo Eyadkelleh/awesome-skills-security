@@ -1,6 +1,8 @@
 # Awesome Security Skills: Security Collection
 
-A curated collection of security testing resources packaged as Claude Code skills, available on [skills.sh](https://skills.sh/)
+[![skills.sh](https://skills.sh/b/Eyadkelleh/awesome-skills-security)](https://skills.sh/Eyadkelleh/awesome-skills-security)
+
+A curated collection of security testing resources packaged as agent skills, available on [skills.sh](https://skills.sh/)
 
 ## Overview
 
@@ -19,16 +21,26 @@ The goal of this project is to provide organized, immediately accessible securit
 
 ### Install from skills.sh (Recommended)
 
-The easiest way to get started is to install from the skills.sh marketplace:
+The easiest way to get started is to install from the [skills.sh](https://skills.sh/) directory:
+
+```bash
+# List all available skills in this repository
+npx skills add Eyadkelleh/awesome-skills-security --list
+
+# Install all security skills
+npx skills add Eyadkelleh/awesome-skills-security --skill '*' -y
+
+# Or install specific skills
+npx skills add Eyadkelleh/awesome-skills-security --skill security-fuzzing --skill llm-testing -y
+```
+
+For Claude Code plugin marketplace users:
 
 ```bash
 # Add the awesome-security-skills marketplace
-/plugin marketplace add Eyadkelleh/awesome-claude-skills-security
+/plugin marketplace add Eyadkelleh/awesome-skills-security
 
-# List all available security plugins
-/plugin
-
-# Install all security skills at once
+# Install all security skills
 /plugin install security-fuzzing@awesome-security-skills
 /plugin install security-passwords@awesome-security-skills
 /plugin install security-patterns@awesome-security-skills
@@ -71,7 +83,7 @@ If this is your first time using Claude Code skills:
 
 2. **Add this marketplace**
    ```bash
-   /plugin marketplace add Eyadkelleh/awesome-claude-skills-security
+   /plugin marketplace add Eyadkelleh/awesome-skills-security
    ```
 
 3. **Install your first skill**
@@ -94,7 +106,7 @@ If this is your first time using Claude Code skills:
 **"Marketplace not found"**
 - Ensure the GitHub repository is public
 - Check your internet connection
-- Verify the repository name is correct: `Eyadkelleh/awesome-claude-skills-security`
+- Verify the repository name is correct: `Eyadkelleh/awesome-skills-security`
 
 **"Plugin not available"**
 - Make sure you've added the marketplace first
@@ -107,7 +119,7 @@ If this is your first time using Claude Code skills:
 - Make sure you're using the correct slash command syntax
 
 **Need help?**
-- Open an issue on [GitHub](https://github.com/Eyadkelleh/awesome-claude-skills-security/issues)
+- Open an issue on [GitHub](https://github.com/Eyadkelleh/awesome-skills-security/issues)
 - Check the [Claude Code documentation](https://docs.anthropic.com/claude-code)
 
 ## Available Skills
@@ -184,7 +196,7 @@ If this is your first time using Claude Code skills:
 Add this repository as a Claude Code plugin marketplace:
 
 ```bash
-/plugin marketplace add Eyadkelleh/awesome-claude-skills-security
+/plugin marketplace add Eyadkelleh/awesome-skills-security
 ```
 
 Then list available plugins:
@@ -225,8 +237,8 @@ Install individual security testing plugins:
 Clone and use directly:
 
 ```bash
-git clone https://github.com/Eyadkelleh/awesome-claude-skills-security.git
-cd awesome-claude-skills-security
+git clone https://github.com/Eyadkelleh/awesome-skills-security.git
+cd awesome-skills-security
 ```
 
 ## Usage
@@ -335,11 +347,11 @@ If you cloned the repository, access wordlists directly:
 
 ```python
 # Example: Load SQL injection payloads
-with open('seclists-categories fuzzing/fuzzing/references/Fuzzing/quick-SQLi.txt', 'r') as f:
+with open('skills/security-fuzzing/references/Fuzzing/quick-SQLi.txt', 'r') as f:
     sqli_payloads = f.read().splitlines()
 
 # Example: Load common passwords
-with open('seclists-categories passwords/passwords/references/500-worst-passwords.txt', 'r') as f:
+with open('skills/security-passwords/references/500-worst-passwords.txt', 'r') as f:
     passwords = f.read().splitlines()
 
 # Example: Use in security testing
@@ -382,7 +394,7 @@ for payload in sqli_payloads[:10]:
 ## Project Structure
 
 ```
-awesome-claude-skills-security/
+awesome-skills-security/
 ├── README.md                                    # This file
 ├── .claude-plugin/                              # Plugin marketplace configuration
 │   ├── marketplace.json                         # Marketplace definition
@@ -397,25 +409,28 @@ awesome-claude-skills-security/
 │       ├── pentest-advisor.md                  # Pentesting guidance
 │       ├── ctf-assistant.md                    # CTF competition help
 │       └── bug-bounty-hunter.md                # Bug bounty guidance
-├── seclists-categories/
-│   ├── fuzzing/fuzzing/
-│   │   ├── SKILL.md                            # Skill metadata
-│   │   └── references/                         # SQL/NoSQL/Command injection
-│   ├── passwords/passwords/
-│   │   ├── SKILL.md
-│   │   └── references/                         # Password wordlists
-│   ├── pattern-matching/pattern-matching/
-│   │   ├── SKILL.md
-│   │   └── references/                         # API keys, sensitive data
-│   ├── payloads/payloads/
-│   │   ├── SKILL.md
-│   │   └── references/                         # XSS, XXE, file upload
-│   ├── usernames/usernames/
-│   │   ├── SKILL.md
-│   │   └── references/                         # Username wordlists
-│   └── web-shells/web-shells/
-│       ├── SKILL.md
-│       └── references/                         # Web shell samples
+└── skills/                                      # skills.sh compatible skill directories
+    ├── security-fuzzing/
+    │   ├── SKILL.md                            # Skill metadata
+    │   └── references/                         # SQL/NoSQL/Command injection
+    ├── security-passwords/
+    │   ├── SKILL.md
+    │   └── references/                         # Password wordlists
+    ├── security-patterns/
+    │   ├── SKILL.md
+    │   └── references/                         # API keys, sensitive data
+    ├── security-payloads/
+    │   ├── SKILL.md
+    │   └── references/                         # XSS, XXE, file upload
+    ├── security-usernames/
+    │   ├── SKILL.md
+    │   └── references/                         # Username wordlists
+    ├── security-webshells/
+    │   ├── SKILL.md
+    │   └── references/                         # Web shell samples
+    └── llm-testing/
+        ├── SKILL.md
+        └── ...                                   # LLM security test prompts
 ```
 
 ## Features
@@ -531,22 +546,24 @@ Please open an issue or pull request.
 
 ## How to Use This on skills.sh
 
-This skill collection is designed to work with the skills.sh marketplace for Claude Code. Here's how users can find and install it:
+This skill collection is compatible with the [skills.sh](https://skills.sh/) open agent skills directory. Skills are discovered from the `skills/` directory and indexed when users install them via the CLI.
 
 ### For Users
 
-1. **Browse skills.sh**: Visit [skills.sh](https://skills.sh/) to discover this and other skills
-2. **Add the marketplace**: Use `/plugin marketplace add Eyadkelleh/awesome-claude-skills-security`
-3. **Install skills**: Choose individual skills or install all at once
-4. **Start using**: Access wordlists, commands, and agents immediately
+1. **Browse skills.sh**: Visit [skills.sh](https://skills.sh/) and search for security skills
+2. **Install via CLI**: `npx skills add Eyadkelleh/awesome-skills-security`
+3. **List available skills**: `npx skills add Eyadkelleh/awesome-skills-security --list`
+4. **Start using**: Access wordlists and testing resources in your agent
+
+For Claude Code plugin users, add the marketplace with `/plugin marketplace add Eyadkelleh/awesome-skills-security`.
 
 ### For Contributors
 
 Want to add your own skills to this collection? Here's how:
 
 1. **Fork this repository**
-2. **Add your skill** in the appropriate category under `seclists-categories/`
-3. **Create a SKILL.md** file with metadata and references
+2. **Add your skill** under `skills/your-skill-name/`
+3. **Create a SKILL.md** with valid frontmatter (`name` must be lowercase with hyphens, plus `description`)
 4. **Update marketplace.json** to include your skill
 5. **Submit a pull request** with a description of your contribution
 
@@ -554,11 +571,11 @@ Want to add your own skills to this collection? Here's how:
 
 To create your own skill collection for skills.sh:
 
-1. **Create a repository** with a `.claude-plugin/` directory
-2. **Add marketplace.json** with your plugin definitions (see ours as an example)
-3. **Include SKILL.md files** in each skill directory
-4. **Push to GitHub** and make it public
-5. **Share your marketplace** - users can add it with `/plugin marketplace add username/repo-name`
+1. **Create a repository** with a `skills/` directory (or `.claude-plugin/marketplace.json`)
+2. **Add SKILL.md files** in each skill directory with `name` and `description` frontmatter
+3. **Push to GitHub** and make it public
+4. **Verify discovery**: `npx skills add username/repo-name --list`
+5. **Share your repo** — users install with `npx skills add username/repo-name`
 
 Example `marketplace.json` structure:
 ```json

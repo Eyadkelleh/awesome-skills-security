@@ -18,26 +18,26 @@ You are helping the user access appropriate wordlists from the SecLists collecti
 2. Guide them to the appropriate resources:
 
 ### Password Wordlists
-Located in `seclists-categories passwords/passwords/references/`:
+Located in `skills/security-passwords/references/`:
 - `500-worst-passwords.txt` - Quick tests for weak passwords
 - `10k-most-common.txt` - Common passwords for brute force
 - `probable-v2-top1575.txt` - Statistically probable passwords
 
 ### Username Wordlists
-Located in `seclists-categories usernames/usernames/references/`:
+Located in `skills/security-usernames/references/`:
 - Common first names, last names
 - Default service account names
 - Admin account patterns
 
 ### Fuzzing Payloads
-Located in `seclists-categories fuzzing/fuzzing/references/`:
+Located in `skills/security-fuzzing/references/`:
 - SQL injection payloads
 - Command injection strings
 - NoSQL injection vectors
 - LDAP injection patterns
 
 ### Pattern Matching
-Located in `seclists-categories pattern-matching/pattern-matching/references/`:
+Located in `skills/security-patterns/references/`:
 - API key formats
 - Credit card patterns
 - Email addresses

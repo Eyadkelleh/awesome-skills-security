@@ -46,7 +46,7 @@ rule webshell_php_eval
 ```
 
 ### Reference Web Shells
-Located in `seclists-categories web-shells/web-shells/references/`:
+Located in `skills/security-webshells/references/`:
 - PHP web shells (c99, r57, b374k)
 - ASP/ASPX shells
 - JSP shells

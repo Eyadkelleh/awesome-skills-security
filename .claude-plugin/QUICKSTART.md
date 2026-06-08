@@ -5,7 +5,7 @@
 ### Add the Marketplace
 
 ```bash
-/plugin marketplace add Eyadkelleh/awesome-claude-skills-security
+/plugin marketplace add Eyadkelleh/awesome-skills-security
 ```
 
 ### Browse Available Plugins
@@ -54,7 +54,7 @@ Ask Claude Code to use these specialized agents:
 /sqli-test
 
 # Follow the interactive guidance
-# Access payloads from: seclists-categories fuzzing/fuzzing/references/Fuzzing/
+# Access payloads from: skills/security-fuzzing/references/Fuzzing/
 ```
 
 ### Bug Bounty Hunting
@@ -134,7 +134,7 @@ Describe the challenge and get strategic guidance.
 
 ## Support
 
-- GitHub Issues: https://github.com/Eyadkelleh/awesome-claude-skills-security/issues
+- GitHub Issues: https://github.com/Eyadkelleh/awesome-skills-security/issues
 - Original SecLists: https://github.com/danielmiessler/SecLists
 
 ---

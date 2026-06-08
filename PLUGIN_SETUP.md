@@ -90,7 +90,7 @@ This repository is now configured as a proper Claude Code plugin marketplace!
 ### Method 1: Add Marketplace (Recommended)
 
 ```bash
-/plugin marketplace add Eyadkelleh/awesome-claude-skills-security
+/plugin marketplace add Eyadkelleh/awesome-skills-security
 ```
 
 Then browse and install plugins:
@@ -110,8 +110,8 @@ Then browse and install plugins:
 ### Method 3: Clone Repository
 
 ```bash
-git clone https://github.com/Eyadkelleh/awesome-claude-skills-security.git
-cd awesome-claude-skills-security
+git clone https://github.com/Eyadkelleh/awesome-skills-security.git
+cd awesome-skills-security
 ```
 
 ## How Users Use It
@@ -137,12 +137,12 @@ User: "Guide me through bug bounty hunting with the bug-bounty-hunter agent"
 ### Direct Resource Access
 
 All SecLists resources remain available in:
-- `seclists-categories fuzzing/fuzzing/references/`
-- `seclists-categories passwords/passwords/references/`
-- `seclists-categories pattern-matching/pattern-matching/references/`
-- `seclists-categories payloads/payloads/references/`
-- `seclists-categories usernames/usernames/references/`
-- `seclists-categories web-shells/web-shells/references/`
+- `skills/security-fuzzing/references/`
+- `skills/security-passwords/references/`
+- `skills/security-patterns/references/`
+- `skills/security-usernames/references/`
+- `skills/security-payloads/references/`
+- `skills/security-webshells/references/`
 
 ## Plugin Architecture
 

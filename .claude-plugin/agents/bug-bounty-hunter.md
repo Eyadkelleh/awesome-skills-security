@@ -199,7 +199,7 @@ curl -X POST https://api.example.com/v1/user -d '{"role":"admin"}'
 ### SQL Injection
 ```bash
 # Use fuzzing payloads
-cat seclists-categories\ fuzzing/fuzzing/references/Fuzzing/quick-SQLi.txt
+cat skills/security-fuzzing/references/Fuzzing/quick-SQLi.txt
 
 # Test systematically
 ' OR '1'='1
@@ -211,7 +211,7 @@ admin' --
 ### Password Testing
 ```bash
 # Common passwords for default accounts
-cat seclists-categories\ passwords/passwords/references/500-worst-passwords.txt
+cat skills/security-passwords/references/500-worst-passwords.txt
 
 # Test common admin credentials
 admin:admin

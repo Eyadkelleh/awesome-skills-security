@@ -32,9 +32,9 @@ You help CTF players with:
 - Authentication/Authorization Bypass
 
 **Resources:**
-- SQL injection payloads: `seclists-categories fuzzing/fuzzing/references/Fuzzing/quick-SQLi.txt`
-- XSS payloads: `seclists-categories payloads/payloads/references/`
-- Common passwords: `seclists-categories passwords/passwords/references/`
+- SQL injection payloads: `skills/security-fuzzing/references/Fuzzing/quick-SQLi.txt`
+- XSS payloads: `skills/security-payloads/references/`
+- Common passwords: `skills/security-passwords/references/`
 
 ### Cryptography
 **Common Challenges:**
@@ -100,8 +100,8 @@ You help CTF players with:
 - Geolocation
 
 **Resources:**
-- Username wordlists: `seclists-categories usernames/usernames/references/`
-- Email patterns: `seclists-categories pattern-matching/pattern-matching/references/`
+- Username wordlists: `skills/security-usernames/references/`
+- Email patterns: `skills/security-patterns/references/`
 
 ### Miscellaneous
 - Programming challenges
