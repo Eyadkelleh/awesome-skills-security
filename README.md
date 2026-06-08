@@ -10,7 +10,7 @@ A curated collection of security testing resources packaged as agent skills, ava
 
 This repository contains a curated collection of security testing resources from [SecLists](https://github.com/danielmiessler/SecLists) packaged as [Agent Skills](https://agentskills.io) for use with Claude Code, Cursor, Codex, and [60+ other supported agents](https://skills.sh/). These skills provide instant access to essential wordlists, payloads, patterns, and web shells for authorized security testing, penetration testing, CTF competitions, and security research.
 
-The goal of this project is to provide organized, immediately accessible security testing resources that integrate seamlessly with Claude Code workflows for:
+The goal of this project is to provide organized, immediately accessible security testing resources that integrate seamlessly with AI agent workflows for:
 
 - Authorized penetration testing and security assessments
 - Bug bounty program research
@@ -45,31 +45,15 @@ npx skills add Eyadkelleh/awesome-skills-security --skill '*' -g -y
 
 Browse and discover this collection on skills.sh: [skills.sh/Eyadkelleh/awesome-skills-security](https://skills.sh/Eyadkelleh/awesome-skills-security)
 
-For Claude Code plugin marketplace users:
-
-```bash
-# Add the awesome-security-skills marketplace
-/plugin marketplace add Eyadkelleh/awesome-skills-security
-
-# Install all security skills
-/plugin install security-fuzzing@awesome-security-skills
-/plugin install security-passwords@awesome-security-skills
-/plugin install security-patterns@awesome-security-skills
-/plugin install security-payloads@awesome-security-skills
-/plugin install security-usernames@awesome-security-skills
-/plugin install security-webshells@awesome-security-skills
-/plugin install llm-testing@awesome-security-skills
-```
-
 ### Verify Installation
 
 After installing, verify the skills are available:
 
 ```bash
-# In Claude Code, try a command
-/sqli-test
+# List installed skills
+npx skills list
 
-# Or ask Claude to use a skill
+# Or ask your agent to use a skill
 "Use the security-fuzzing skill to show me SQL injection payloads"
 ```
 
@@ -77,67 +61,24 @@ After installing, verify the skills are available:
 
 Once installed, you'll have access to:
 - **7 Security Skill Categories**: Fuzzing, Passwords, Patterns, Payloads, Usernames, Web-shells, LLM Testing
-- **5 Slash Commands**: `/sqli-test`, `/xss-test`, `/wordlist`, `/webshell-detect`, `/api-keys`
-- **3 Specialized Agents**: Pentest Advisor, CTF Assistant, Bug Bounty Hunter
 - **Curated SecLists Content**: Essential wordlists and payloads for security testing
 - **LLM Security Testing**: Comprehensive AI/ML security testing prompts and methodologies
 
-### First Time Setup
-
-If this is your first time using Claude Code skills:
-
-1. **Make sure you have Claude Code CLI installed**
-   ```bash
-   # Check if Claude Code is installed
-   claude --version
-   ```
-
-2. **Add this marketplace**
-   ```bash
-   /plugin marketplace add Eyadkelleh/awesome-skills-security
-   ```
-
-3. **Install your first skill**
-   ```bash
-   # Start with fuzzing payloads
-   /plugin install security-fuzzing@awesome-security-skills
-   ```
-
-4. **Test it out**
-   ```bash
-   # Try a slash command
-   /sqli-test
-
-   # Or ask Claude naturally
-   "Show me SQL injection payloads from the security-fuzzing skill"
-   ```
-
 ### Troubleshooting
 
-**"No skills found" (skills.sh CLI)**
+**"No skills found"**
 - Ensure you're using the correct repo: `Eyadkelleh/awesome-skills-security`
 - Run `npx skills add Eyadkelleh/awesome-skills-security --list` to verify discovery
 - Each `SKILL.md` must have valid YAML frontmatter with `name` (lowercase, hyphens) and `description`
 
-**"Marketplace not found" (Claude Code)**
-- Ensure the GitHub repository is public
-- Check your internet connection
-- Verify the repository name is correct: `Eyadkelleh/awesome-skills-security`
-
-**"Plugin not available" (Claude Code)**
-- Make sure you've added the marketplace first
-- Run `/plugin` to see all available plugins
-- Check that you're using the correct plugin name and marketplace
-
-**"Command not working" (Claude Code)**
-- Verify the plugin is installed with `/plugin`
-- Try reinstalling: `/plugin uninstall <plugin-name>` then install again
-- Make sure you're using the correct slash command syntax
+**"Skill not loading in agent"**
+- Verify the skill was installed to the correct agent directory (e.g. `.cursor/skills/`)
+- Try reinstalling: `npx skills add Eyadkelleh/awesome-skills-security --skill <name> -y`
+- Check your agent's documentation for skill loading requirements
 
 **Need help?**
 - Open an issue on [GitHub](https://github.com/Eyadkelleh/awesome-skills-security/issues)
 - Check the [skills.sh directory](https://skills.sh/) and [Agent Skills spec](https://agentskills.io)
-- Check the [Claude Code documentation](https://docs.anthropic.com/claude-code)
 
 ## Available Skills
 
@@ -214,7 +155,7 @@ All skills live under `skills/` and are discoverable by the [skills.sh CLI](http
 ## Requirements
 
 - **Node.js** (for `npx skills` — the skills.sh install CLI)
-- **Claude Code CLI** (optional, for plugin marketplace and slash commands)
+- A supported AI agent (Cursor, Claude Code, Codex, OpenCode, etc.)
 - Git for cloning the repository
 - Basic understanding of security testing concepts
 - Authorization for security testing on target systems
@@ -241,48 +182,7 @@ npx skills update -y
 
 Skills are installed to your agent's skills directory (e.g. `.cursor/skills/` for Cursor, `.claude/skills/` for Claude Code). Use `-g` for a global install available across all projects.
 
-### Method 2: Claude Code Plugin Marketplace
-
-Add this repository as a Claude Code plugin marketplace:
-
-```bash
-/plugin marketplace add Eyadkelleh/awesome-skills-security
-```
-
-Then list available plugins:
-
-```bash
-/plugin
-```
-
-### Method 3: Install Specific Plugins
-
-Install individual security testing plugins:
-
-```bash
-# Fuzzing payloads for injection testing
-/plugin install security-fuzzing@awesome-security-skills
-
-# Password wordlists
-/plugin install security-passwords@awesome-security-skills
-
-# Sensitive data patterns (API keys, etc.)
-/plugin install security-patterns@awesome-security-skills
-
-# XSS, XXE, and attack payloads
-/plugin install security-payloads@awesome-security-skills
-
-# Username wordlists
-/plugin install security-usernames@awesome-security-skills
-
-# Web shell samples for detection
-/plugin install security-webshells@awesome-security-skills
-
-# LLM security testing prompts
-/plugin install llm-testing@awesome-security-skills
-```
-
-### Method 4: Clone Repository
+### Method 2: Clone Repository
 
 Clone and use directly:
 
@@ -293,33 +193,11 @@ cd awesome-skills-security
 
 ## Usage
 
-### Using Slash Commands
-
-Once installed from skills.sh, you can use specialized security testing commands directly in Claude Code:
-
-```bash
-# SQL injection testing guidance
-/sqli-test
-
-# XSS testing and payload generation
-/xss-test
-
-# Access wordlists for fuzzing/brute force
-/wordlist
-
-# Web shell detection (defensive security)
-/webshell-detect
-
-# Scan for exposed API keys and secrets
-/api-keys
-```
-
 ### Using Skills in Natural Language
 
-You can also reference the skills in your conversation with Claude:
+Reference skills in your conversation with any supported agent:
 
-```bash
-# Ask Claude to use specific skills
+```
 "Use the security-fuzzing skill to help me test for SQL injection vulnerabilities"
 
 "Show me common passwords from the security-passwords skill"
@@ -329,54 +207,26 @@ You can also reference the skills in your conversation with Claude:
 "I need XSS payloads from the security-payloads skill"
 ```
 
-### Using Specialized Agents
-
-Invoke expert agents for comprehensive security guidance:
-
-```bash
-# Penetration testing advisor
-"Use the pentest-advisor agent to help me plan a security assessment"
-
-# CTF competition assistant
-"Use the ctf-assistant agent to help me solve this web exploitation challenge"
-
-# Bug bounty hunting advisor
-"Use the bug-bounty-hunter agent to help me test this bug bounty program responsibly"
-```
-
 ### Practical Usage Examples
 
 **Example 1: SQL Injection Testing**
-```bash
-# Start with the slash command
-/sqli-test
-
-# Or ask Claude naturally
+```
 "I need to test a login form for SQL injection. Use the security-fuzzing skill to show me relevant payloads"
 ```
 
 **Example 2: Password Auditing**
-```bash
-# Access password lists
-/wordlist
-
-# Or ask Claude
+```
 "Use the security-passwords skill to show me the most common weak passwords to test against our password policy"
 ```
 
 **Example 3: Code Review for Secrets**
-```bash
-# Scan for exposed secrets
-/api-keys
-
-# Or ask Claude
+```
 "Use the security-patterns skill to help me scan this codebase for exposed API keys and credentials"
 ```
 
 **Example 4: CTF Challenge**
-```bash
-# Get comprehensive CTF help
-"I'm working on a web exploitation CTF challenge. Use the ctf-assistant agent and security-payloads skill to help me approach this"
+```
+"I'm working on a web exploitation CTF challenge. Use the security-payloads skill to help me approach this"
 ```
 
 **Example 5: LLM Security Testing**
@@ -412,33 +262,26 @@ for payload in sqli_payloads[:10]:
 ### Example Workflows
 
 **SQL Injection Testing (Authorized)**
-```bash
-# 1. Start with the SQL injection command
-/sqli-test
-
-# 2. Follow the guidance provided
-# 3. Use appropriate payloads from fuzzing/references/
-# 4. Document all findings
+```
+1. Ask your agent to use the security-fuzzing skill
+2. Request relevant payloads for your target database
+3. Test in an authorized scope
+4. Document all findings
 ```
 
 **CTF Challenge**
-```bash
-# 1. Invoke the CTF assistant
-"Help me solve this web exploitation CTF challenge"
-
-# 2. Describe the challenge
-# 3. Get guidance on approach and payloads
-# 4. Access relevant wordlists as suggested
+```
+1. Describe the challenge to your agent
+2. Ask it to use security-payloads or security-fuzzing as needed
+3. Access relevant wordlists from the skill references
 ```
 
 **Bug Bounty Hunting**
-```bash
-# 1. Invoke the bug bounty agent
-"Help me test this bug bounty program"
-
-# 2. Review scope and methodology
-# 3. Use appropriate testing commands
-# 4. Get guidance on responsible disclosure
+```
+1. Ask your agent to use the appropriate security skills for your target
+2. Review scope and methodology
+3. Use payloads and wordlists from the installed skills
+4. Follow responsible disclosure practices
 ```
 
 ## Project Structure
@@ -446,19 +289,6 @@ for payload in sqli_payloads[:10]:
 ```
 awesome-skills-security/
 ├── README.md                                    # This file
-├── .claude-plugin/                              # Plugin marketplace configuration
-│   ├── marketplace.json                         # Marketplace definition
-│   ├── plugin.json                              # Main plugin manifest
-│   ├── commands/                                # Slash commands
-│   │   ├── sqli-test.md                        # SQL injection testing
-│   │   ├── xss-test.md                         # XSS testing
-│   │   ├── wordlist.md                         # Wordlist access
-│   │   ├── webshell-detect.md                  # Web shell detection
-│   │   └── api-keys.md                         # API key scanning
-│   └── agents/                                  # Specialized agents
-│       ├── pentest-advisor.md                  # Pentesting guidance
-│       ├── ctf-assistant.md                    # CTF competition help
-│       └── bug-bounty-hunter.md                # Bug bounty guidance
 └── skills/                                      # skills.sh compatible skill directories
     ├── security-fuzzing/
     │   ├── SKILL.md                            # Skill metadata
@@ -485,26 +315,10 @@ awesome-skills-security/
 
 ## Features
 
-### Slash Commands
-
-- **`/sqli-test`** - Interactive SQL injection testing guide with payload recommendations
-- **`/xss-test`** - XSS vulnerability testing with context-aware payload suggestions
-- **`/wordlist`** - Quick access to curated wordlists for authorized testing
-- **`/webshell-detect`** - Defensive security guidance for web shell detection
-- **`/api-keys`** - Scan for exposed API keys and sensitive credentials
-
-### Specialized Agents
-
-- **Pentest Advisor** - Strategic penetration testing methodology and planning
-- **CTF Assistant** - CTF competition challenge solver with educational focus
-- **Bug Bounty Hunter** - Professional bug bounty hunting and responsible disclosure
-
-### Security Resources
-
-- **7 Plugin Categories** - Fuzzing, Passwords, Patterns, Payloads, Usernames, Web-shells, LLM Testing
+- **7 Skill Categories** - Fuzzing, Passwords, Patterns, Payloads, Usernames, Web-shells, LLM Testing
 - **Curated from SecLists** - Essential security testing wordlists and payloads
 - **AI/ML Security Testing** - Comprehensive LLM testing prompts for bias, alignment, and safety
-- **Instant Access** - All resources available through Claude Code commands
+- **Multi-Agent Support** - Install via skills.sh into Cursor, Claude Code, Codex, and 60+ agents
 - **Ethical Guidelines** - Built-in reminders for authorized use only
 
 ## Security & Ethics
@@ -548,7 +362,7 @@ SecLists is an incredible resource containing over 6,000 files and 4.5GB of secu
 
 - **Curates essential lists** most commonly needed for security testing
 - **Organizes by category** for easy discovery and access
-- **Integrates with Claude Code** for seamless workflow integration
+- **Integrates with AI agents** via the skills.sh ecosystem for seamless workflow integration
 - **Provides clear documentation** on when and how to use each resource
 - **Emphasizes ethical use** with clear guidelines and warnings
 
@@ -561,7 +375,7 @@ All security testing resources in this repository are sourced from [SecLists](ht
 - **Maintainer:** Daniel Miessler
 - **Contributors:** Security community worldwide
 
-This project is a curated, skill-packaged subset for Claude Code integration. For the complete SecLists collection (4.5GB, 6,000+ files), visit the original repository.
+This project is a curated, skill-packaged subset for agent skill integration. For the complete SecLists collection (4.5GB, 6,000+ files), visit the original repository.
 
 ## Best Practices
 
@@ -626,8 +440,6 @@ After installing, ask your agent to use a skill naturally:
 "Use the security-fuzzing skill to show me SQL injection payloads"
 ```
 
-Claude Code users can also add the plugin marketplace: `/plugin marketplace add Eyadkelleh/awesome-skills-security`
-
 ### Supported Agents
 
 Install to any supported agent with the `-a` flag:
@@ -662,45 +474,18 @@ Want to add your own skills to this collection?
 1. **Fork this repository**
 2. **Add your skill** under `skills/your-skill-name/`
 3. **Create a SKILL.md** with valid frontmatter (`name` must be lowercase with hyphens, plus `description`)
-4. **Update `marketplace.json`** to include your skill
-5. **Verify locally**: `npx skills add . --list`
-6. **Submit a pull request** with a description of your contribution
+4. **Verify locally**: `npx skills add . --list`
+5. **Submit a pull request** with a description of your contribution
 
 ### Publishing Your Own Skills
 
 To create your own skill collection for skills.sh:
 
-1. **Create a repository** with a `skills/` directory (or `.claude-plugin/marketplace.json`)
+1. **Create a repository** with a `skills/` directory
 2. **Add SKILL.md files** in each skill directory with `name` and `description` frontmatter
 3. **Push to GitHub** and make it public
 4. **Verify discovery**: `npx skills add username/repo-name --list`
 5. **Share your repo** — users install with `npx skills add username/repo-name`
-
-Example `marketplace.json` structure:
-```json
-{
-  "name": "your-marketplace-name",
-  "owner": {
-    "name": "Your Name",
-    "email": "your@email.com"
-  },
-  "metadata": {
-    "description": "Your skill collection description",
-    "version": "1.0.0",
-    "pluginRoot": "./skills"
-  },
-  "plugins": [
-    {
-      "name": "your-skill-name",
-      "source": "./path/to/skill",
-      "description": "Skill description",
-      "version": "1.0.0",
-      "keywords": ["tag1", "tag2"],
-      "category": "your-category"
-    }
-  ]
-}
-```
 
 ## Related OSINT Tools
 
@@ -714,8 +499,8 @@ Example `marketplace.json` structure:
 - [This collection on skills.sh](https://skills.sh/Eyadkelleh/awesome-skills-security) - Install stats and skill listing
 - [Agent Skills Specification](https://agentskills.io) - SKILL.md format and conventions
 - [skills CLI (npm)](https://www.npmjs.com/package/skills) - `npx skills` install and manage skills
-- [Claude Code Documentation](https://docs.anthropic.com/claude-code) - Official Claude Code docs
 - [Cursor Skills Documentation](https://cursor.com/docs/context/skills) - Using skills in Cursor
+- [Claude Code Skills Documentation](https://code.claude.com/docs/en/skills) - Using skills in Claude Code
 - [SecLists Official Repository](https://github.com/danielmiessler/SecLists)
 - [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
 - [Bug Bounty Platforms](https://github.com/disclose/bug-bounty-platforms)
@@ -735,4 +520,4 @@ This repository is provided for educational and authorized security testing purp
 
 **Note:** This is a curated reference repository. Always verify you have proper authorization before conducting security testing. When in doubt, ask for explicit written permission.
 
-**Generated with Claude Code** | Awesome Claude Skills: Security Collection
+**Awesome Security Skills** | Security Collection for [skills.sh](https://skills.sh/)
