@@ -492,6 +492,7 @@ To create your own skill collection for skills.sh:
 | Tool | Description |
 |:-----|:------------|
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
+| [nowork-studio/toprank](https://github.com/nowork-studio/toprank) | Repo-aware SEO and site-analysis skill set for Claude Code. Useful during authorized web assessments for crawling public page surfaces, reviewing metadata/schema exposure, spotting duplicate indexable URLs, and inspecting CMS-backed content issues. |
 
 ## Documentation and References
 
