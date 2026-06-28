@@ -491,6 +491,7 @@ To create your own skill collection for skills.sh:
 
 | Tool | Description |
 |:-----|:------------|
+| [h5i](https://github.com/h5i-dev/h5i) | Rust CLI that runs multiple coding agents (Claude Code, Codex) on one task in isolated git-worktree sandboxes, has them peer-review each other, then a neutral verifier replays and tests each candidate and merges the passing one. Run metadata is versioned in-repo under refs/h5i/*. |
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
 
 ## Documentation and References
