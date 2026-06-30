@@ -492,6 +492,7 @@ To create your own skill collection for skills.sh:
 | Tool | Description |
 |:-----|:------------|
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
+| [Penthera](https://github.com/danoszz/penthera) | Web app security scanner skill: TLS, headers, auth hardening, secret scanning, IDOR/OAuth, injection probes. OWASP-mapped findings, SARIF output. Runs as a Claude/Cursor skill or CLI. |
 
 ## Documentation and References
 
