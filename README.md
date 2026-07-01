@@ -493,6 +493,7 @@ To create your own skill collection for skills.sh:
 |:-----|:------------|
 | [x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper) | X/Twitter OSINT skill — user lookup, follower extraction, engagement analysis, account monitoring. MCP server, REST API, 20 extraction tools. |
 
+- [Skill Hub](https://skill.442595.xyz/) — 5800+ curated AI Agent Skills for Claude Code, Codex, Cursor, Hermes & more across 22 categories.
 ## Documentation and References
 
 - [skills.sh Directory](https://skills.sh/) - Browse and install agent skills
