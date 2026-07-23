@@ -495,6 +495,7 @@ To create your own skill collection for skills.sh:
 
 ## Documentation and References
 
+- [Darkmoon](https://github.com/ASCIT31/Dark-Moon) - Open source (GPL-3.0) autonomous AI penetration testing platform and MCP host covering web, API, Active Directory and Kubernetes, with proof of exploitation and a local privacy gateway.
 - [skills.sh Directory](https://skills.sh/) - Browse and install agent skills
 - [This collection on skills.sh](https://skills.sh/Eyadkelleh/awesome-skills-security) - Install stats and skill listing
 - [Agent Skills Specification](https://agentskills.io) - SKILL.md format and conventions
