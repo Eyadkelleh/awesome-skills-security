@@ -487,6 +487,12 @@ To create your own skill collection for skills.sh:
 4. **Verify discovery**: `npx skills add username/repo-name --list`
 5. **Share your repo** — users install with `npx skills add username/repo-name`
 
+## Related QA Tools
+
+| Tool | Description |
+|:-----|:------------|
+| [Agent QA](https://github.com/vostride/agent-qa) | Source-available, self-improving QA agent for software teams with natural-language web and mobile testing, persistent testing context, an MCP server, and three portable Agent Skills. |
+
 ## Related OSINT Tools
 
 | Tool | Description |
