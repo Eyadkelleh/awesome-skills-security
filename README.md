@@ -491,7 +491,7 @@ To create your own skill collection for skills.sh:
 
 | Tool | Description |
 |:-----|:------------|
-| [Agent QA](https://github.com/vostride/agent-qa) | Open-source, self-improving QA agent for software teams with natural-language web and mobile testing, persistent testing context, an MCP server, and three portable Agent Skills. |
+| [Agent QA](https://github.com/vostride/agent-qa) | Source-available, self-improving QA agent for software teams with natural-language web and mobile testing, persistent testing context, an MCP server, and three portable Agent Skills. |
 
 ## Related OSINT Tools
 
