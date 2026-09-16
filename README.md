@@ -79,6 +79,7 @@ Once installed, you'll have access to:
 **Need help?**
 - Open an issue on [GitHub](https://github.com/Eyadkelleh/awesome-skills-security/issues)
 - Check the [skills.sh directory](https://skills.sh/) and [Agent Skills spec](https://agentskills.io)
+- [HostDeFi](https://hostdefi.com) — free token-safety scanner grading tokens A+–F from on-chain checks (mint/freeze authority, liquidity, holder concentration) across Solana + 7 EVM chains. Keyless REST API, hosted MCP, x402 endpoints.
 
 ## Available Skills
 
